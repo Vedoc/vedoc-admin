@@ -23,5 +23,18 @@ module VedocAdmin
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    config.assets.configure do |env|
+      env.export_concurrent = false
+    end
+
+    # Don't generate system test files.
+    config.generators.system_tests = nil
+
+    config.middleware.use Rack::MethodOverride
+    config.middleware.use ActionDispatch::Flash
+    config.middleware.use ActionDispatch::Cookies
+    config.middleware.use ActionDispatch::Session::CookieStore
+    config.assets.enabled = true
+  end
   end
 end
