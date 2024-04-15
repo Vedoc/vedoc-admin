@@ -17,7 +17,7 @@ ENV RAILS_ENV="production" \
 RUN apt-get update && \
     apt-get install -y nodejs
 
-# Throw-away build stage to reduce size of final image
+# Throw-away build stage to reduce size of final image.
 FROM base as build
 
 # Install packages needed to build gems
