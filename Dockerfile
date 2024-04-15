@@ -11,7 +11,8 @@ WORKDIR /rails
 ENV RAILS_ENV="production" \
     BUNDLE_DEPLOYMENT="1" \
     BUNDLE_PATH="/usr/local/bundle" \
-    BUNDLE_WITHOUT="development"
+    BUNDLE_WITHOUT="development" \
+    SECRET_KEY_BASE="41891a0d793f5897d146a31b61be93eaa9a628c1798afc614a1b1a825a48667c8bf38241a292e452a834ae660270815d2465db0da0b73fc80cd3be325dbff4a5"
 
 # Install Node.js for JavaScript runtime
 RUN apt-get update && \
