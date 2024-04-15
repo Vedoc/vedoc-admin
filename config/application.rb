@@ -36,5 +36,4 @@ module VedocAdmin
     config.middleware.use ActionDispatch::Session::CookieStore
     config.assets.enabled = true
   end
-  end
 end
