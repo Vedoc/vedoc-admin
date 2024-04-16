@@ -53,6 +53,9 @@ RUN apt-get update -qq && \
 COPY --from=build /usr/local/bundle /usr/local/bundle
 COPY --from=build /rails /rails
 
+# Ensure that the /app/tmp/cache directory is writable by the user running the application
+RUN mkdir -p /app/tmp/cache && chown -R rails:rails /app/tmp/cache
+
 # Run and own only the runtime files as a non-root user for security
 RUN useradd rails --create-home --shell /bin/bash && \
     chown -R rails:rails db log storage tmp
